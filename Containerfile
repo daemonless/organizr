@@ -1,0 +1,52 @@
+ARG BASE_VERSION=15
+FROM ghcr.io/daemonless/nginx-base:${BASE_VERSION}
+
+ARG FREEBSD_ARCH=amd64
+LABEL org.opencontainers.image.title="organizr" \
+      org.opencontainers.image.description="HTPC/Homelab Services Organizer on FreeBSD" \
+      org.opencontainers.image.source="https://github.com/daemonless/organizr" \
+      org.opencontainers.image.url="https://organizr.app/" \
+      org.opencontainers.image.documentation="https://docs.organizr.app/" \
+      org.opencontainers.image.licenses="GPL-3.0-only" \
+      org.opencontainers.image.vendor="daemonless" \
+      org.opencontainers.image.authors="daemonless" \
+      io.daemonless.port="80" \
+      io.daemonless.arch="${FREEBSD_ARCH}" \
+      io.daemonless.pkg-source="containerfile" \
+      io.daemonless.base="nginx"
+
+# Install PHP, git, and required extensions
+# Note: openssl is built into base php84 package
+# Note: umask 022 ensures directories are created with correct permissions
+RUN umask 022 && pkg update && \
+    pkg install -y \
+        git-lite \
+        php84 \
+        php84-curl \
+        php84-pdo_sqlite \
+        php84-sqlite3 \
+        php84-session \
+        php84-simplexml \
+        php84-xml \
+        php84-xmlwriter \
+        php84-zip \
+        php84-zlib \
+        php84-fileinfo \
+        php84-filter \
+        php84-ldap \
+        php84-ctype \
+        php84-iconv \
+        php84-mbstring && \
+    pkg clean -ay && \
+    rm -rf /var/cache/pkg/* /var/db/pkg/repos/*
+
+# Copy default configs and scripts
+COPY root/ /
+
+# Make scripts executable and set up php-fpm service
+RUN chmod +x /etc/cont-init.d/* /etc/services.d/*/run 2>/dev/null || true
+
+EXPOSE 80
+VOLUME /config
+
+

@@ -1,0 +1,11 @@
+#!/bin/sh
+# php-fpm s6 service - master runs as root
+# worker processes run as bsd user via www.conf settings
+
+mkdir -p /run/php
+chown bsd:bsd /run/php
+
+# Signal readiness when the port is responsive
+s6-ready-when fetch -qo /dev/null http://localhost:80/
+
+exec /usr/local/sbin/php-fpm -F

@@ -1,0 +1,5 @@
+#!/bin/sh
+# nginx s6 service - master runs as root to bind port 80
+# worker processes run as bsd user via 'user bsd;' in nginx.conf
+
+exec /usr/local/sbin/nginx -c /config/nginx/nginx.conf

@@ -1,0 +1,92 @@
+#!/bin/sh
+# Initialize Organizr - similar to official organizr/organizr container
+
+PUID=${PUID:-1000}
+PGID=${PGID:-1000}
+BRANCH=${BRANCH:-v2-master}
+
+echo "-------------------------------------"
+echo "GID/UID"
+echo "-------------------------------------"
+echo "User uid:    $PUID"
+echo "User gid:    $PGID"
+echo "-------------------------------------"
+
+# Update www user/group IDs if different from default
+if [ "$PUID" != "80" ] || [ "$PGID" != "80" ]; then
+    pw groupmod www -g "$PGID" 2>/dev/null || true
+fi
+
+# Create directory structure (like official container)
+mkdir -p \
+    /config/www \
+    /config/nginx \
+    /config/log/nginx \
+    /config/log/php \
+    /config/keys \
+    /config/php \
+    /var/run \
+    /var/log/nginx
+
+# Copy default configs if they don't exist
+if [ ! -f /config/nginx/nginx.conf ]; then
+    cp /defaults/nginx.conf /config/nginx/nginx.conf
+fi
+
+if [ ! -f /config/nginx/site.conf ]; then
+    cp /defaults/site.conf /config/nginx/site.conf
+fi
+
+# Create php-local.ini if it doesn't exist
+if [ ! -f /config/php/php-local.ini ]; then
+    TZ=${TZ:-UTC}
+    cat > /config/php/php-local.ini << EOF
+; Edit this file to override php.ini directives and restart the container
+
+date.timezone = ${TZ}
+
+; Suppress PHP 8.4 deprecation warnings from older libraries
+error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT
+display_errors = Off
+log_errors = On
+EOF
+fi
+
+# Copy php-local.ini to php conf.d
+cp /config/php/php-local.ini /usr/local/etc/php/php-local.ini 2>/dev/null || true
+
+# Install or update Organizr
+if [ ! -d /config/www/organizr/.git ]; then
+    echo "-----------------------"
+    echo "| Installing Organizr |"
+    echo "-----------------------"
+    mkdir -p /config/www/organizr
+    git clone --progress -b "$BRANCH" https://github.com/causefx/Organizr /config/www/organizr
+    cd /config/www/organizr
+    git config --global --add safe.directory /config/www/organizr
+    git rev-parse HEAD > /config/www/organizr/Github.txt
+else
+    echo "-----------------------"
+    echo "|  Updating Organizr  |"
+    echo "-----------------------"
+    cd /config/www/organizr
+    git config --global --add safe.directory /config/www/organizr
+    git fetch
+    git reset --hard origin/"$BRANCH"
+    git checkout "$BRANCH"
+    git pull
+    git rev-parse HEAD > /config/www/organizr/Github.txt
+fi
+
+# Mark as Docker/container install
+echo "$BRANCH" > /config/www/organizr/Docker.txt
+
+# Set permissions
+chown -R bsd:bsd /config /var/log/nginx /var/log
+chmod 644 /usr/local/etc/php-fpm.d/www.conf
+chown -R bsd:bsd /var/tmp/nginx 2>/dev/null || true
+: > /var/log/php-fpm.log
+chown bsd:bsd /var/log/php-fpm.log
+
+# Clean up any stale git lock files
+rm -f /config/www/organizr/.git/index.lock 2>/dev/null || true
