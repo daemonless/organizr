@@ -4,7 +4,7 @@ FROM ghcr.io/daemonless/nginx-base:${BASE_VERSION}
 ARG FREEBSD_ARCH=amd64
 ARG PACKAGES="git-lite php84 php84-curl php84-pdo_sqlite php84-sqlite3 php84-session php84-simplexml php84-xml php84-xmlwriter php84-zip php84-zlib php84-fileinfo php84-filter php84-ldap php84-ctype php84-iconv php84-mbstring"
 
-LABEL org.opencontainers.image.title="organizr" \
+LABEL org.opencontainers.image.title="Organizr" \
     org.opencontainers.image.description="HTPC/Homelab Services Organizer on FreeBSD" \
     org.opencontainers.image.source="https://github.com/daemonless/organizr" \
     org.opencontainers.image.url="https://organizr.app/" \
