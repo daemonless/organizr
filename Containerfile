@@ -1,7 +1,9 @@
 ARG BASE_VERSION=15
+ARG ORGANIZR_VERSION=2.1
 FROM ghcr.io/daemonless/nginx-base:${BASE_VERSION}
 
 ARG FREEBSD_ARCH=amd64
+ARG ORGANIZR_VERSION
 ARG PACKAGES="git-lite php84 php84-curl php84-pdo_sqlite php84-sqlite3 php84-session php84-simplexml php84-xml php84-xmlwriter php84-zip php84-zlib php84-fileinfo php84-filter php84-ldap php84-ctype php84-iconv php84-mbstring"
 
 LABEL org.opencontainers.image.title="Organizr" \
@@ -9,6 +11,7 @@ LABEL org.opencontainers.image.title="Organizr" \
     org.opencontainers.image.source="https://github.com/daemonless/organizr" \
     org.opencontainers.image.url="https://organizr.app/" \
     org.opencontainers.image.documentation="https://docs.organizr.app/" \
+    org.opencontainers.image.version="${ORGANIZR_VERSION}" \
     org.opencontainers.image.licenses="GPL-3.0-only" \
     org.opencontainers.image.vendor="daemonless" \
     org.opencontainers.image.authors="daemonless" \
@@ -27,7 +30,9 @@ RUN umask 022 && pkg update && \
     pkg install -y \
     ${PACKAGES} && \
     pkg clean -ay && \
-    rm -rf /var/cache/pkg/* /var/db/pkg/repos/*
+    rm -rf /var/cache/pkg/* /var/db/pkg/repos/* && \
+    mkdir -p /app && \
+    echo "${ORGANIZR_VERSION}" > /app/version
 
 # Copy default configs and scripts
 COPY root/ /
