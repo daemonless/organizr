@@ -5,6 +5,8 @@ FROM ghcr.io/daemonless/nginx-base:${BASE_VERSION}
 ARG FREEBSD_ARCH=amd64
 ARG ORGANIZR_VERSION
 ARG PACKAGES="git-lite php84 php84-curl php84-pdo_sqlite php84-sqlite3 php84-session php84-simplexml php84-xml php84-xmlwriter php84-zip php84-zlib php84-fileinfo php84-filter php84-ldap php84-ctype php84-iconv php84-mbstring"
+ARG UPSTREAM_URL="https://api.github.com/repos/causefx/Organizr/releases/latest"
+ARG UPSTREAM_JQ=".tag_name"
 
 LABEL org.opencontainers.image.title="Organizr" \
     org.opencontainers.image.description="HTPC/Homelab Services Organizer on FreeBSD" \
@@ -19,6 +21,8 @@ LABEL org.opencontainers.image.title="Organizr" \
     io.daemonless.arch="${FREEBSD_ARCH}" \
     io.daemonless.base="nginx" \
     io.daemonless.category="Utilities" \
+    io.daemonless.upstream-url="${UPSTREAM_URL}" \
+    io.daemonless.upstream-jq="${UPSTREAM_JQ}" \
     io.daemonless.packages="${PACKAGES}"
 
 # Install PHP, git, and required extensions
