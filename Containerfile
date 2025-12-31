@@ -20,7 +20,6 @@ LABEL org.opencontainers.image.title="Organizr" \
     io.daemonless.pkg-source="containerfile" \
     io.daemonless.base="nginx" \
     io.daemonless.category="Utilities" \
-    io.daemonless.upstream-mode="pkg" \
     io.daemonless.packages="${PACKAGES}"
 
 # Install PHP, git, and required extensions
