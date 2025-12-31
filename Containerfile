@@ -17,7 +17,6 @@ LABEL org.opencontainers.image.title="Organizr" \
     org.opencontainers.image.authors="daemonless" \
     io.daemonless.port="80" \
     io.daemonless.arch="${FREEBSD_ARCH}" \
-    io.daemonless.pkg-source="containerfile" \
     io.daemonless.base="nginx" \
     io.daemonless.category="Utilities" \
     io.daemonless.packages="${PACKAGES}"
