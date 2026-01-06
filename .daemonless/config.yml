@@ -3,4 +3,4 @@ cit:
   mode: screenshot
   port: 80
   wait: 120
-  ready: "Organizr initialization complete"
+  ready: "Organizr is ready"

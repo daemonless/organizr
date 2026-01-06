@@ -87,5 +87,3 @@ chown bsd:bsd /var/log/php-fpm.log
 
 # Clean up any stale git lock files
 rm -f /config/www/organizr/.git/index.lock 2>/dev/null || true
-
-echo "Organizr initialization complete"

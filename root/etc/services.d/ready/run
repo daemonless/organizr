@@ -1,0 +1,19 @@
+#!/bin/sh
+# Ready notification service - polls until app responds
+
+# Wait for app to be ready
+max_attempts=60
+attempt=0
+
+while [ $attempt -lt $max_attempts ]; do
+    if fetch -qo /dev/null http://localhost:80/ 2>/dev/null; then
+        echo "[ready] Organizr is ready"
+        # Exit successfully - this is a oneshot service
+        exec s6-svc -d /var/run/s6/services/ready
+    fi
+    attempt=$((attempt + 1))
+    sleep 1
+done
+
+echo "[ready] Timeout waiting for Organizr"
+exec s6-svc -d /var/run/s6/services/ready
