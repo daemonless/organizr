@@ -12,11 +12,6 @@ echo "User uid:    $PUID"
 echo "User gid:    $PGID"
 echo "-------------------------------------"
 
-# Update www user/group IDs if different from default
-if [ "$PUID" != "80" ] || [ "$PGID" != "80" ]; then
-    pw groupmod www -g "$PGID" 2>/dev/null || true
-fi
-
 # Create directory structure (like official container)
 mkdir -p \
     /config/www \
@@ -83,6 +78,8 @@ echo "$BRANCH" > /config/www/organizr/Docker.txt
 
 # Set permissions
 chown -R bsd:bsd /config /var/log/nginx /var/log
+chmod 755 /config/www
+chmod -R u=rwX,go=rX /config/www/organizr
 chmod 644 /usr/local/etc/php-fpm.d/www.conf
 chown -R bsd:bsd /var/tmp/nginx 2>/dev/null || true
 : > /var/log/php-fpm.log
