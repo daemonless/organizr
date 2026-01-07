@@ -1,6 +1,6 @@
 icon: ':simple-organizr:'
 cit:
-  mode: screenshot
+  mode: health
   port: 80
   wait: 120
-  ready: "Organizr is ready"
+  ready: "Starting s6 supervision"
