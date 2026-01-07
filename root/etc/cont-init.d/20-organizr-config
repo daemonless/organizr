@@ -51,16 +51,27 @@ fi
 cp /config/php/php-local.ini /usr/local/etc/php/php-local.ini 2>/dev/null || true
 
 # Install or update Organizr
-if [ ! -d /config/www/organizr/.git ]; then
+if [ ! -f /config/www/organizr/index.php ]; then
     echo "-----------------------"
     echo "| Installing Organizr |"
     echo "-----------------------"
     mkdir -p /config/www/organizr
-    git clone --progress -b "$BRANCH" https://github.com/causefx/Organizr /config/www/organizr
-    cd /config/www/organizr
-    git config --global --add safe.directory /config/www/organizr
-    git rev-parse HEAD > /config/www/organizr/Github.txt
-else
+    # Try git clone first (allows updates), fallback to pre-baked copy
+    if git clone -b "$BRANCH" https://github.com/causefx/Organizr /config/www/organizr 2>/dev/null; then
+        echo "| Cloned from GitHub  |"
+        cd /config/www/organizr
+        git config --global --add safe.directory /config/www/organizr
+        git rev-parse HEAD > /config/www/organizr/Github.txt
+    elif [ -d /app/organizr ]; then
+        echo "| Using pre-built copy |"
+        cp -R /app/organizr/* /config/www/organizr/
+        echo "pre-built" > /config/www/organizr/Github.txt
+    else
+        echo "ERROR: No Organizr source available!"
+        exit 1
+    fi
+    echo "| Organizr installed  |"
+elif [ -d /config/www/organizr/.git ] && [ "$BRANCH" != "manual" ]; then
     echo "-----------------------"
     echo "|  Updating Organizr  |"
     echo "-----------------------"
@@ -71,6 +82,10 @@ else
     git checkout "$BRANCH"
     git pull
     git rev-parse HEAD > /config/www/organizr/Github.txt
+else
+    echo "-----------------------"
+    echo "| Organizr ready      |"
+    echo "-----------------------"
 fi
 
 # Mark as Docker/container install

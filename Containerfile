@@ -40,6 +40,11 @@ RUN umask 022 && pkg update && \
     mkdir -p /app && \
     echo "${ORGANIZR_VERSION}" > /app/version
 
+# Pre-clone Organizr at build time (runtime can update if network available)
+ARG BRANCH=v2-master
+RUN git clone -b "${BRANCH}" --depth 1 https://github.com/causefx/Organizr /app/organizr && \
+    rm -rf /app/organizr/.git
+
 # Copy default configs and scripts
 COPY root/ /
 
