@@ -1,0 +1,40 @@
+name: organizr
+
+x-daemonless:
+  title: "Organizr"
+  icon: ":material-view-dashboard:"
+  category: "Utilities"
+  description: "HTPC/Homelab Services Organizer on FreeBSD."
+  upstream_url: "https://github.com/causefx/Organizr"
+  web_url: "https://organizr.app/"
+  freshports_url: ""
+  user: "bsd"
+  mlock: false
+  upstream_binary: true
+  
+  docs:
+    env:
+      PUID: "User ID for the application process"
+      PGID: "Group ID for the application process"
+      TZ: "Timezone for the container"
+    volumes:
+      /config: "Configuration directory (database, logos)"
+    ports:
+      80: "Web UI"
+
+services:
+  organizr:
+    image: ghcr.io/daemonless/organizr:latest
+    container_name: organizr
+    restart: unless-stopped
+    
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=UTC
+
+    volumes:
+      - /path/to/containers/organizr:/config
+
+    ports:
+      - "8083:80"
