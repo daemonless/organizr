@@ -11,6 +11,7 @@ HTPC/Homelab Services Organizer on FreeBSD.
 |---|---|
 | **Port** | 8083 |
 | **Registry** | `ghcr.io/daemonless/organizr` |
+| **Docs** | [daemonless.io/images/organizr](https://daemonless.io/images/organizr/) |
 | **Source** | [https://github.com/causefx/Organizr](https://github.com/causefx/Organizr) |
 | **Website** | [https://organizr.app/](https://organizr.app/) |
 
