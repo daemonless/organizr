@@ -1,0 +1,327 @@
+{
+  "image": "organizr",
+  "generated": "2026-02-01T22:45:56Z",
+  "tags": {
+    "latest": {
+      "app_version": "2.1",
+      "source": "upstream-binary",
+      "generated": "2026-02-01T22:41:32Z",
+      "packages": {
+        "freebsd": [
+          {
+            "name": "FreeBSD-audit-lib",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-blocklist",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-bzip2-lib",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-certctl",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-clibs",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-ctf-lib",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-fetch",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-kerberos-lib",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-libarchive",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-libbsdstat",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-libcasper",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-libexecinfo",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-libldns",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-libmagic",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-libucl",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-mtree",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-ncurses-lib",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-openssl",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-openssl-lib",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-pkg-bootstrap",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-rc",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-runtime",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-tcpd",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-ufs-lib",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-utilities",
+            "version": "15.0p1"
+          },
+          {
+            "name": "FreeBSD-xz-lib",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-zfs-lib",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-zlib",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-zoneinfo",
+            "version": "15.0"
+          },
+          {
+            "name": "brotli",
+            "version": "1.2.0,1"
+          },
+          {
+            "name": "curl",
+            "version": "8.17.0"
+          },
+          {
+            "name": "cyrus-sasl",
+            "version": "2.1.28_5"
+          },
+          {
+            "name": "execline",
+            "version": "2.9.7.0"
+          },
+          {
+            "name": "expat",
+            "version": "2.7.3"
+          },
+          {
+            "name": "gettext-runtime",
+            "version": "0.26"
+          },
+          {
+            "name": "git-lite",
+            "version": "2.52.0"
+          },
+          {
+            "name": "indexinfo",
+            "version": "0.3.1_1"
+          },
+          {
+            "name": "jq",
+            "version": "1.8.1"
+          },
+          {
+            "name": "libedit",
+            "version": "3.1.20251016_1,1"
+          },
+          {
+            "name": "libiconv",
+            "version": "1.18_1"
+          },
+          {
+            "name": "libidn2",
+            "version": "2.3.8"
+          },
+          {
+            "name": "libnghttp2",
+            "version": "1.68.0"
+          },
+          {
+            "name": "libpsl",
+            "version": "0.21.5_2"
+          },
+          {
+            "name": "libssh2",
+            "version": "1.11.1,3"
+          },
+          {
+            "name": "libunistring",
+            "version": "1.4.1"
+          },
+          {
+            "name": "libxml2",
+            "version": "2.14.6"
+          },
+          {
+            "name": "libzip",
+            "version": "1.11.4"
+          },
+          {
+            "name": "nginx",
+            "version": "1.28.0_10,3"
+          },
+          {
+            "name": "oniguruma",
+            "version": "6.9.10"
+          },
+          {
+            "name": "openldap26-client",
+            "version": "2.6.10_1"
+          },
+          {
+            "name": "pcre2",
+            "version": "10.47_1"
+          },
+          {
+            "name": "php84",
+            "version": "8.4.16"
+          },
+          {
+            "name": "php84-ctype",
+            "version": "8.4.16"
+          },
+          {
+            "name": "php84-curl",
+            "version": "8.4.16"
+          },
+          {
+            "name": "php84-fileinfo",
+            "version": "8.4.16"
+          },
+          {
+            "name": "php84-filter",
+            "version": "8.4.16"
+          },
+          {
+            "name": "php84-iconv",
+            "version": "8.4.16"
+          },
+          {
+            "name": "php84-ldap",
+            "version": "8.4.16"
+          },
+          {
+            "name": "php84-mbstring",
+            "version": "8.4.16"
+          },
+          {
+            "name": "php84-pdo",
+            "version": "8.4.16"
+          },
+          {
+            "name": "php84-pdo_sqlite",
+            "version": "8.4.16"
+          },
+          {
+            "name": "php84-session",
+            "version": "8.4.16"
+          },
+          {
+            "name": "php84-simplexml",
+            "version": "8.4.16"
+          },
+          {
+            "name": "php84-sqlite3",
+            "version": "8.4.16"
+          },
+          {
+            "name": "php84-xml",
+            "version": "8.4.16"
+          },
+          {
+            "name": "php84-xmlwriter",
+            "version": "8.4.16"
+          },
+          {
+            "name": "php84-zip",
+            "version": "8.4.16"
+          },
+          {
+            "name": "php84-zlib",
+            "version": "8.4.16"
+          },
+          {
+            "name": "pkg",
+            "version": "2.5.1"
+          },
+          {
+            "name": "readline",
+            "version": "8.3.3"
+          },
+          {
+            "name": "s6",
+            "version": "2.13.2.0"
+          },
+          {
+            "name": "s6-rc",
+            "version": "0.5.6.0"
+          },
+          {
+            "name": "skalibs",
+            "version": "2.14.4.0"
+          },
+          {
+            "name": "sqlite3",
+            "version": "3.50.4_2,1"
+          },
+          {
+            "name": "zstd",
+            "version": "1.5.7_1"
+          }
+        ],
+        "dotnet": [],
+        "python": [],
+        "node": [],
+        "go": []
+      },
+      "summary": {
+        "freebsd": 75,
+        "dotnet": 0,
+        "python": 0,
+        "node": 0,
+        "go": 0,
+        "total": 75
+      }
+    }
+  }
+}
