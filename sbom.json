@@ -1,11 +1,12 @@
 {
   "image": "organizr",
-  "generated": "2026-02-02T13:45:50Z",
+  "generated": "2026-02-06T00:15:20Z",
   "tags": {
     "latest": {
+      "arch": "amd64",
       "app_version": "2.1",
       "source": "upstream-binary",
-      "generated": "2026-02-02T13:33:53Z",
+      "generated": "2026-02-06T00:10:31Z",
       "packages": {
         "freebsd": [
           {
@@ -190,7 +191,7 @@
           },
           {
             "name": "libxml2",
-            "version": "2.14.6"
+            "version": "2.15.1"
           },
           {
             "name": "libzip",
@@ -311,16 +312,81 @@
         ],
         "dotnet": [],
         "python": [],
-        "node": [],
+        "node": [
+          {
+            "name": "Flot",
+            "version": "0.8.3"
+          },
+          {
+            "name": "Holder",
+            "version": "2.4.1"
+          },
+          {
+            "name": "bootstrap",
+            "version": "3.3.6"
+          },
+          {
+            "name": "bootstrap-treeview",
+            "version": "1.2.0"
+          },
+          {
+            "name": "chartist-plugin-tooltips",
+            "version": "0.0.17"
+          },
+          {
+            "name": "dropify",
+            "version": "0.2.0"
+          },
+          {
+            "name": "dropzone",
+            "version": "4.3.0"
+          },
+          {
+            "name": "jquery-asColorPicker",
+            "version": "0.3.1"
+          },
+          {
+            "name": "jquery-steps",
+            "version": "1.1.0"
+          },
+          {
+            "name": "jquery-wizard",
+            "version": "0.3.1"
+          },
+          {
+            "name": "jsgrid",
+            "version": "1.4.1"
+          },
+          {
+            "name": "magnific-popup",
+            "version": "1.1.0"
+          },
+          {
+            "name": "metismenu",
+            "version": "1.1.3"
+          },
+          {
+            "name": "morris.js",
+            "version": "0.5.0"
+          },
+          {
+            "name": "tablesaw",
+            "version": "2.0.3"
+          },
+          {
+            "name": "typeahead.js",
+            "version": "0.11.1"
+          }
+        ],
         "go": []
       },
       "summary": {
         "freebsd": 75,
         "dotnet": 0,
         "python": 0,
-        "node": 0,
+        "node": 16,
         "go": 0,
-        "total": 75
+        "total": 91
       }
     }
   }
