@@ -1,12 +1,12 @@
 {
   "image": "organizr",
-  "generated": "2026-02-06T00:15:20Z",
+  "generated": "2026-02-13T12:14:34Z",
   "tags": {
     "latest": {
       "arch": "amd64",
       "app_version": "2.1",
-      "source": "upstream-binary",
-      "generated": "2026-02-06T00:10:31Z",
+      "source": "upstream",
+      "generated": "2026-02-13T12:11:52Z",
       "packages": {
         "freebsd": [
           {
@@ -15,7 +15,7 @@
           },
           {
             "name": "FreeBSD-blocklist",
-            "version": "15.0"
+            "version": "15.0p3"
           },
           {
             "name": "FreeBSD-bzip2-lib",
@@ -311,7 +311,8 @@
           }
         ],
         "dotnet": [],
-        "python": [],
+        "go": [],
+        "java": [],
         "node": [
           {
             "name": "Flot",
@@ -378,14 +379,21 @@
             "version": "0.11.1"
           }
         ],
-        "go": []
+        "php": [],
+        "python": [],
+        "ruby": [],
+        "rust": []
       },
       "summary": {
         "freebsd": 75,
         "dotnet": 0,
-        "python": 0,
-        "node": 16,
         "go": 0,
+        "java": 0,
+        "node": 16,
+        "php": 0,
+        "python": 0,
+        "ruby": 0,
+        "rust": 0,
         "total": 91
       }
     }
