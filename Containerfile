@@ -12,7 +12,7 @@ ARG FREEBSD_ARCH=amd64
 ARG ORGANIZR_VERSION
 ARG PACKAGES="git-lite php84 php84-curl php84-pdo_sqlite php84-sqlite3 php84-session php84-simplexml php84-xml php84-xmlwriter php84-zip php84-zlib php84-fileinfo php84-filter php84-ldap php84-ctype php84-iconv php84-mbstring"
 # Note: Organizr v2 has no formal releases, version is manually set via ORGANIZR_VERSION
-ARG HEALTHCHECK_ENDPOINT="http://localhost:8083/daemonless-ping"
+ARG HEALTHCHECK_ENDPOINT="http://localhost:80/daemonless-ping"
 
 ENV HEALTHCHECK_URL="${HEALTHCHECK_ENDPOINT}"
 
@@ -27,7 +27,7 @@ LABEL org.opencontainers.image.title="Organizr" \
       org.opencontainers.image.vendor="daemonless" \
       org.opencontainers.image.authors="daemonless" \
       io.daemonless.category="Utilities" \
-      io.daemonless.port="8083" \
+      io.daemonless.port="80" \
       io.daemonless.volumes="/config" \
       io.daemonless.arch="${FREEBSD_ARCH}" \
       io.daemonless.base="nginx" \
@@ -57,7 +57,7 @@ COPY root/ /
 RUN chmod +x /etc/cont-init.d/* /etc/services.d/*/run 2>/dev/null || true
 
 # --- Expose (Injected by Generator) ---
-EXPOSE 8083
+EXPOSE 80
 
 # --- Volumes (Injected by Generator) ---
 VOLUME /config

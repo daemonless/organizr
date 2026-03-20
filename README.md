@@ -5,15 +5,27 @@ Source: dbuild templates
 
 # Organizr
 
+[![Build Status](https://img.shields.io/github/actions/workflow/status/daemonless/organizr/build.yaml?style=flat-square&label=Build&color=green)](https://github.com/daemonless/organizr/actions)
+[![Last Commit](https://img.shields.io/github/last-commit/daemonless/organizr?style=flat-square&label=Last+Commit&color=blue)](https://github.com/daemonless/organizr/commits)
+
 HTPC/Homelab Services Organizer on FreeBSD.
 
 | | |
 |---|---|
-| **Port** | 8083 |
+| **Port** | 80 |
 | **Registry** | `ghcr.io/daemonless/organizr` |
-| **Docs** | [daemonless.io/images/organizr](https://daemonless.io/images/organizr/) |
 | **Source** | [https://github.com/causefx/Organizr](https://github.com/causefx/Organizr) |
 | **Website** | [https://organizr.app/](https://organizr.app/) |
+
+## Version Tags
+
+| Tag | Description | Best For |
+| :--- | :--- | :--- |
+| `latest` | **Upstream Binary**. Built from official release. | Most users. Matches Linux Docker behavior. |
+
+## Prerequisites
+
+Before deploying, ensure your host environment is ready. See the [Quick Start Guide](https://daemonless.io/guides/quick-start) for host setup instructions.
 
 ## Deployment
 
@@ -29,24 +41,67 @@ services:
       - PGID=1000
       - TZ=UTC
     volumes:
-      - /path/to/containers/organizr:/config
+      - "/path/to/containers/organizr:/config"
     ports:
-      - 8083:8083
+      - 80:80
     restart: unless-stopped
+```
+
+### AppJail Director
+
+**.env**:
+
+```
+DIRECTOR_PROJECT=organizr
+PUID=1000
+PGID=1000
+TZ=UTC
+```
+
+**appjail-director.yml**:
+
+```yaml
+options:
+  - virtualnet: ':<random> default'
+  - nat:
+services:
+  organizr:
+    name: organizr
+    options:
+      - container: 'boot args:--pull'
+    oci:
+      user: root
+      environment:
+        - PUID: !ENV '${PUID}'
+        - PGID: !ENV '${PGID}'
+        - TZ: !ENV '${TZ}'
+    volumes:
+      - organizr: /config
+volumes:
+  organizr:
+    device: '/path/to/containers/organizr'
+```
+
+**Makejail**:
+
+```
+ARG tag=latest
+
+OPTION overwrite=force
+OPTION from=ghcr.io/daemonless/organizr:${tag}
 ```
 
 ### Podman CLI
 
 ```bash
 podman run -d --name organizr \
-  -p 8083:8083 \
-  -e PUID=@PUID@ \
-  -e PGID=@PGID@ \
-  -e TZ=@TZ@ \
+  -p 80:80 \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e TZ=UTC \
   -v /path/to/containers/organizr:/config \
   ghcr.io/daemonless/organizr:latest
 ```
-Access at: `http://localhost:8083`
 
 ### Ansible
 
@@ -58,16 +113,19 @@ Access at: `http://localhost:8083`
     state: started
     restart_policy: always
     env:
-      PUID: "@PUID@"
-      PGID: "@PGID@"
-      TZ: "@TZ@"
+      PUID: "1000"
+      PGID: "1000"
+      TZ: "UTC"
     ports:
-      - "8083:8083"
+      - "80:80"
     volumes:
       - "/path/to/containers/organizr:/config"
 ```
 
-## Configuration
+Access at: `http://localhost:80`
+
+## Parameters
+
 ### Environment Variables
 
 | Variable | Default | Description |
@@ -75,19 +133,23 @@ Access at: `http://localhost:8083`
 | `PUID` | `1000` | User ID for the application process |
 | `PGID` | `1000` | Group ID for the application process |
 | `TZ` | `UTC` | Timezone for the container |
+
 ### Volumes
 
 | Path | Description |
 |------|-------------|
 | `/config` | Configuration directory (database, logos) |
+
 ### Ports
 
 | Port | Protocol | Description |
 |------|----------|-------------|
-| `8083` | TCP |  |
+| `80` | TCP | Web UI |
 
-## Notes
+**Architectures:** amd64
+**User:** `bsd` (UID/GID via PUID/PGID, defaults to 1000:1000)
+**Base:** FreeBSD 15.0
 
-- **Architectures:** amd64
-- **User:** `bsd` (UID/GID set via PUID/PGID)
-- **Base:** Built on `ghcr.io/daemonless/base` (FreeBSD)
+---
+
+Need help? Join our [Discord](https://discord.gg/Kb9tkhecZT) community.
