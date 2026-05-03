@@ -1,13 +1,13 @@
 {
+  "generated": "2026-05-03T11:19:15Z",
   "image": "organizr",
-  "generated": "2026-03-28T16:34:43Z",
   "tags": {
     "latest": {
-      "arch": "amd64",
       "app_version": "2.1",
-      "source": "upstream",
-      "generated": "2026-03-28T16:31:57Z",
+      "arch": "amd64",
+      "generated": "2026-05-03T11:17:50Z",
       "packages": {
+        "dotnet": [],
         "freebsd": [
           {
             "name": "FreeBSD-audit-lib",
@@ -79,11 +79,11 @@
           },
           {
             "name": "FreeBSD-openssl",
-            "version": "15.0"
+            "version": "15.0p2"
           },
           {
             "name": "FreeBSD-openssl-lib",
-            "version": "15.0"
+            "version": "15.0p2"
           },
           {
             "name": "FreeBSD-pkg-bootstrap",
@@ -95,7 +95,7 @@
           },
           {
             "name": "FreeBSD-runtime",
-            "version": "15.0"
+            "version": "15.0p6"
           },
           {
             "name": "FreeBSD-tcpd",
@@ -135,7 +135,7 @@
           },
           {
             "name": "curl",
-            "version": "8.17.0"
+            "version": "8.19.0_2"
           },
           {
             "name": "cyrus-sasl",
@@ -143,19 +143,19 @@
           },
           {
             "name": "execline",
-            "version": "2.9.7.0"
+            "version": "2.9.8.1"
           },
           {
             "name": "expat",
-            "version": "2.7.4"
+            "version": "2.7.5"
           },
           {
             "name": "gettext-runtime",
-            "version": "0.26"
+            "version": "1.0"
           },
           {
             "name": "git-lite",
-            "version": "2.52.0"
+            "version": "2.53.0"
           },
           {
             "name": "indexinfo",
@@ -179,7 +179,7 @@
           },
           {
             "name": "libnghttp2",
-            "version": "1.68.0"
+            "version": "1.68.1"
           },
           {
             "name": "libpsl",
@@ -191,7 +191,7 @@
           },
           {
             "name": "libunistring",
-            "version": "1.4.1"
+            "version": "1.4.2"
           },
           {
             "name": "libxml2",
@@ -203,7 +203,7 @@
           },
           {
             "name": "nginx",
-            "version": "1.28.0_10,3"
+            "version": "1.28.3,3"
           },
           {
             "name": "oniguruma",
@@ -211,7 +211,7 @@
           },
           {
             "name": "openldap26-client",
-            "version": "2.6.10_1"
+            "version": "2.6.13"
           },
           {
             "name": "pcre2",
@@ -219,75 +219,75 @@
           },
           {
             "name": "php84",
-            "version": "8.4.16"
+            "version": "8.4.19"
           },
           {
             "name": "php84-ctype",
-            "version": "8.4.16"
+            "version": "8.4.19"
           },
           {
             "name": "php84-curl",
-            "version": "8.4.16"
+            "version": "8.4.19"
           },
           {
             "name": "php84-fileinfo",
-            "version": "8.4.16"
+            "version": "8.4.19"
           },
           {
             "name": "php84-filter",
-            "version": "8.4.16"
+            "version": "8.4.19"
           },
           {
             "name": "php84-iconv",
-            "version": "8.4.16"
+            "version": "8.4.19"
           },
           {
             "name": "php84-ldap",
-            "version": "8.4.16"
+            "version": "8.4.19"
           },
           {
             "name": "php84-mbstring",
-            "version": "8.4.16"
+            "version": "8.4.19"
           },
           {
             "name": "php84-pdo",
-            "version": "8.4.16"
+            "version": "8.4.19"
           },
           {
             "name": "php84-pdo_sqlite",
-            "version": "8.4.16"
+            "version": "8.4.19"
           },
           {
             "name": "php84-session",
-            "version": "8.4.16"
+            "version": "8.4.19"
           },
           {
             "name": "php84-simplexml",
-            "version": "8.4.16"
+            "version": "8.4.19"
           },
           {
             "name": "php84-sqlite3",
-            "version": "8.4.16"
+            "version": "8.4.19"
           },
           {
             "name": "php84-xml",
-            "version": "8.4.16"
+            "version": "8.4.19"
           },
           {
             "name": "php84-xmlwriter",
-            "version": "8.4.16"
+            "version": "8.4.19"
           },
           {
             "name": "php84-zip",
-            "version": "8.4.16"
+            "version": "8.4.19"
           },
           {
             "name": "php84-zlib",
-            "version": "8.4.16"
+            "version": "8.4.19"
           },
           {
             "name": "pkg",
-            "version": "2.5.1"
+            "version": "2.6.2_1"
           },
           {
             "name": "readline",
@@ -295,15 +295,11 @@
           },
           {
             "name": "s6",
-            "version": "2.13.2.0"
-          },
-          {
-            "name": "s6-rc",
-            "version": "0.5.6.0"
+            "version": "2.14.0.1"
           },
           {
             "name": "skalibs",
-            "version": "2.14.4.0"
+            "version": "2.14.5.1"
           },
           {
             "name": "sqlite3",
@@ -314,7 +310,6 @@
             "version": "1.5.7_1"
           }
         ],
-        "dotnet": [],
         "go": [],
         "java": [],
         "node": [
@@ -388,9 +383,10 @@
         "ruby": [],
         "rust": []
       },
+      "source": "upstream",
       "summary": {
-        "freebsd": 76,
         "dotnet": 0,
+        "freebsd": 75,
         "go": 0,
         "java": 0,
         "node": 16,
@@ -398,7 +394,7 @@
         "python": 0,
         "ruby": 0,
         "rust": 0,
-        "total": 92
+        "total": 91
       }
     }
   }
