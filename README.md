@@ -10,7 +10,6 @@ Source: dbuild templates
 
 HTPC/Homelab Services Organizer on FreeBSD.
 
-
 | | |
 |---|---|
 | **Port** | 80 |
@@ -122,8 +121,6 @@ podman run -d --name organizr \
     volumes:
       - "/path/to/containers/organizr:/config"
 ```
-
-Access at: `http://localhost:80`
 
 ## Parameters
 

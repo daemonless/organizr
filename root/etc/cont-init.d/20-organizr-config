@@ -91,6 +91,9 @@ fi
 # Mark as Docker/container install
 echo "$BRANCH" > /config/www/organizr/Docker.txt
 
+# Pre-create nginx logs so they're bsd-owned, not root (nginx master runs as root)
+touch /config/log/nginx/access.log /config/log/nginx/error.log
+
 # Set permissions
 chown -R bsd:bsd /config /var/log/nginx /var/log
 chmod 755 /config/www
