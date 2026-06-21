@@ -34,16 +34,16 @@ Before deploying, ensure your host environment is ready. See the [Quick Start Gu
 ```yaml
 services:
   organizr:
-    image: ghcr.io/daemonless/organizr:latest
+    image: "ghcr.io/daemonless/organizr:latest"
     container_name: organizr
     environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=UTC
+      - PUID=1000  # User ID for the application process
+      - PGID=1000  # Group ID for the application process
+      - TZ=UTC  # Timezone for the container
     volumes:
       - "/path/to/containers/organizr:/config"
     ports:
-      - 80:80
+      - "80:80"
     restart: unless-stopped
 ```
 
@@ -69,6 +69,7 @@ services:
     name: organizr
     options:
       - container: 'boot args:--pull'
+      - expose="80:80 proto:tcp" \
     oci:
       user: root
       environment:
@@ -90,6 +91,7 @@ ARG tag=latest
 OPTION overwrite=force
 OPTION from=ghcr.io/daemonless/organizr:${tag}
 ```
+**Note**: Exposing ports in AppJail means that your service can be reached from remote hosts. If that is not your intention, do not expose the ports and communicate with the service using the IPv4 address assigned by the virtual network.
 
 ### Podman CLI
 
@@ -103,13 +105,30 @@ podman run -d --name organizr \
   ghcr.io/daemonless/organizr:latest
 ```
 
+### AppJail
+
+```bash
+appjail oci run -Pd \
+  -o overwrite=force \
+  -o container="args:--pull" \
+  -o virtualnet=":<random> default" \
+  -o nat \
+  -o expose="80:80 proto:tcp" \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e TZ=UTC \
+  -o fstab="/path/to/containers/organizr /config <pseudofs>" \
+  ghcr.io/daemonless/organizr:latest organizr
+```
+**Note**: Exposing ports in AppJail means that your service can be reached from remote hosts. If that is not your intention, do not expose the ports and communicate with the service using the IPv4 address assigned by the virtual network.
+
 ### Ansible
 
 ```yaml
 - name: Deploy organizr
   containers.podman.podman_container:
     name: organizr
-    image: ghcr.io/daemonless/organizr:latest
+    image: "ghcr.io/daemonless/organizr:latest"
     state: started
     restart_policy: always
     env:
@@ -121,6 +140,8 @@ podman run -d --name organizr \
     volumes:
       - "/path/to/containers/organizr:/config"
 ```
+
+Access at: `http://localhost:80`
 
 ## Parameters
 
@@ -146,7 +167,7 @@ podman run -d --name organizr \
 
 **Architectures:** amd64
 **User:** `bsd` (UID/GID via PUID/PGID, defaults to 1000:1000)
-**Base:** FreeBSD 15.0
+**Base:** FreeBSD 15.1
 
 ---
 
