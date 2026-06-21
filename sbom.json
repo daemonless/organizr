@@ -1,137 +1,141 @@
 {
-  "generated": "2026-06-12T23:41:34Z",
+  "generated": "2026-06-21T21:44:28Z",
   "image": "organizr",
   "tags": {
     "latest": {
       "app_version": "2026-05-19",
       "arch": "amd64",
-      "generated": "2026-06-12T23:38:19Z",
+      "generated": "2026-06-21T21:43:09Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
           {
             "name": "FreeBSD-audit-lib",
-            "version": "15.0"
+            "version": "15.1"
           },
           {
             "name": "FreeBSD-blocklist",
-            "version": "15.0p3"
+            "version": "15.1"
           },
           {
             "name": "FreeBSD-bzip2-lib",
-            "version": "15.0"
+            "version": "15.1"
           },
           {
             "name": "FreeBSD-certctl",
-            "version": "15.0"
+            "version": "15.1"
           },
           {
             "name": "FreeBSD-clibs",
-            "version": "15.0"
-          },
-          {
-            "name": "FreeBSD-clibs-lib32",
-            "version": "15.0"
+            "version": "15.1"
           },
           {
             "name": "FreeBSD-ctf-lib",
-            "version": "15.0"
+            "version": "15.1"
           },
           {
             "name": "FreeBSD-fetch",
-            "version": "15.0"
+            "version": "15.1"
           },
           {
             "name": "FreeBSD-kerberos-lib",
-            "version": "15.0"
+            "version": "15.1"
           },
           {
             "name": "FreeBSD-libarchive",
-            "version": "15.0"
+            "version": "15.1"
           },
           {
             "name": "FreeBSD-libbsdstat",
-            "version": "15.0"
+            "version": "15.1"
           },
           {
             "name": "FreeBSD-libcasper",
-            "version": "15.0p9"
+            "version": "15.1"
           },
           {
             "name": "FreeBSD-libcompiler_rt-dev",
-            "version": "15.0"
+            "version": "15.1"
           },
           {
             "name": "FreeBSD-libexecinfo",
-            "version": "15.0"
+            "version": "15.1"
           },
           {
             "name": "FreeBSD-libldns",
-            "version": "15.0"
+            "version": "15.1"
           },
           {
             "name": "FreeBSD-libmagic",
-            "version": "15.0"
+            "version": "15.1"
           },
           {
             "name": "FreeBSD-libucl",
-            "version": "15.0"
+            "version": "15.1"
           },
           {
             "name": "FreeBSD-mtree",
-            "version": "15.0"
+            "version": "15.1"
           },
           {
             "name": "FreeBSD-ncurses-lib",
-            "version": "15.0"
+            "version": "15.1"
           },
           {
             "name": "FreeBSD-openssl",
-            "version": "15.0p2"
+            "version": "15.1"
           },
           {
             "name": "FreeBSD-openssl-lib",
-            "version": "15.0p2"
+            "version": "15.1"
+          },
+          {
+            "name": "FreeBSD-pam-lib",
+            "version": "15.1"
           },
           {
             "name": "FreeBSD-pkg-bootstrap",
-            "version": "15.0"
+            "version": "15.1"
           },
           {
             "name": "FreeBSD-rc",
-            "version": "15.0"
+            "version": "15.1"
           },
           {
             "name": "FreeBSD-runtime",
-            "version": "15.0p9"
+            "version": "15.1"
           },
           {
             "name": "FreeBSD-tcpd",
-            "version": "15.0"
+            "version": "15.1"
           },
           {
             "name": "FreeBSD-ufs-lib",
-            "version": "15.0"
+            "version": "15.1"
           },
           {
             "name": "FreeBSD-utilities",
-            "version": "15.0p9"
+            "version": "15.1"
           },
           {
             "name": "FreeBSD-xz-lib",
-            "version": "15.0"
+            "version": "15.1"
           },
           {
             "name": "FreeBSD-zfs-lib",
-            "version": "15.0"
+            "version": "15.1"
           },
           {
             "name": "FreeBSD-zlib",
-            "version": "15.0"
+            "version": "15.1"
           },
           {
             "name": "FreeBSD-zoneinfo",
-            "version": "15.0p7"
+            "version": "15.1"
+          },
+          {
+            "name": "FreeBSD-zstd-lib",
+            "version": "15.1"
           },
           {
             "name": "brotli",
@@ -227,71 +231,71 @@
           },
           {
             "name": "php84",
-            "version": "8.4.19"
+            "version": "8.4.21"
           },
           {
             "name": "php84-ctype",
-            "version": "8.4.19"
+            "version": "8.4.21"
           },
           {
             "name": "php84-curl",
-            "version": "8.4.19"
+            "version": "8.4.21"
           },
           {
             "name": "php84-fileinfo",
-            "version": "8.4.19"
+            "version": "8.4.21"
           },
           {
             "name": "php84-filter",
-            "version": "8.4.19"
+            "version": "8.4.21"
           },
           {
             "name": "php84-iconv",
-            "version": "8.4.19"
+            "version": "8.4.21"
           },
           {
             "name": "php84-ldap",
-            "version": "8.4.19"
+            "version": "8.4.21"
           },
           {
             "name": "php84-mbstring",
-            "version": "8.4.19"
+            "version": "8.4.21"
           },
           {
             "name": "php84-pdo",
-            "version": "8.4.19"
+            "version": "8.4.21"
           },
           {
             "name": "php84-pdo_sqlite",
-            "version": "8.4.19"
+            "version": "8.4.21"
           },
           {
             "name": "php84-session",
-            "version": "8.4.19"
+            "version": "8.4.21"
           },
           {
             "name": "php84-simplexml",
-            "version": "8.4.19"
+            "version": "8.4.21"
           },
           {
             "name": "php84-sqlite3",
-            "version": "8.4.19"
+            "version": "8.4.21"
           },
           {
             "name": "php84-xml",
-            "version": "8.4.19"
+            "version": "8.4.21"
           },
           {
             "name": "php84-xmlwriter",
-            "version": "8.4.19"
+            "version": "8.4.21"
           },
           {
             "name": "php84-zip",
-            "version": "8.4.19"
+            "version": "8.4.21"
           },
           {
             "name": "php84-zlib",
-            "version": "8.4.19"
+            "version": "8.4.21"
           },
           {
             "name": "pkg",
@@ -394,7 +398,7 @@
       "source": "upstream",
       "summary": {
         "dotnet": 0,
-        "freebsd": 77,
+        "freebsd": 78,
         "go": 0,
         "java": 0,
         "node": 16,
@@ -402,7 +406,7 @@
         "python": 0,
         "ruby": 0,
         "rust": 0,
-        "total": 93
+        "total": 94
       }
     }
   }
