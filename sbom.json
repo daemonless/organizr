@@ -1,11 +1,11 @@
 {
-  "generated": "2026-06-21T21:44:28Z",
+  "generated": "2026-07-01T22:41:47Z",
   "image": "organizr",
   "tags": {
     "latest": {
       "app_version": "2026-05-19",
       "arch": "amd64",
-      "generated": "2026-06-21T21:43:09Z",
+      "generated": "2026-07-01T22:40:33Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -147,7 +147,7 @@
           },
           {
             "name": "curl",
-            "version": "8.20.0"
+            "version": "8.21.0"
           },
           {
             "name": "cyrus-sasl",
@@ -215,7 +215,7 @@
           },
           {
             "name": "nginx",
-            "version": "1.30.2,3"
+            "version": "1.30.3,3"
           },
           {
             "name": "oniguruma",
