@@ -1,11 +1,11 @@
 {
-  "generated": "2026-07-13T10:16:32Z",
+  "generated": "2026-07-27T22:08:02Z",
   "image": "organizr",
   "tags": {
     "latest": {
       "app_version": "2026-05-19",
       "arch": "amd64",
-      "generated": "2026-07-13T10:15:15Z",
+      "generated": "2026-07-27T22:02:45Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -71,6 +71,10 @@
           },
           {
             "name": "FreeBSD-libucl",
+            "version": "15.1"
+          },
+          {
+            "name": "FreeBSD-locales",
             "version": "15.1"
           },
           {
@@ -143,7 +147,7 @@
           },
           {
             "name": "ca_root_nss",
-            "version": "3.124"
+            "version": "3.125"
           },
           {
             "name": "curl",
@@ -175,7 +179,7 @@
           },
           {
             "name": "jq",
-            "version": "1.8.1"
+            "version": "1.8.2"
           },
           {
             "name": "libedit",
@@ -219,7 +223,7 @@
           },
           {
             "name": "nginx",
-            "version": "1.30.3,3"
+            "version": "1.30.3_2,3"
           },
           {
             "name": "oniguruma",
@@ -402,7 +406,7 @@
       "source": "upstream",
       "summary": {
         "dotnet": 0,
-        "freebsd": 79,
+        "freebsd": 80,
         "go": 0,
         "java": 0,
         "node": 16,
@@ -410,7 +414,7 @@
         "python": 0,
         "ruby": 0,
         "rust": 0,
-        "total": 95
+        "total": 96
       }
     }
   }
