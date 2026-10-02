@@ -1,11 +1,11 @@
 {
-  "generated": "2026-09-21T22:11:19Z",
+  "generated": "2026-10-02T23:47:10Z",
   "image": "organizr",
   "tags": {
     "latest": {
       "app_version": "2026-05-19",
       "arch": "amd64",
-      "generated": "2026-09-21T21:58:58Z",
+      "generated": "2026-10-02T23:46:17Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
