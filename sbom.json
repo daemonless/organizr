@@ -1,11 +1,11 @@
 {
-  "generated": "2026-10-10T23:49:52Z",
+  "generated": "2026-10-20T22:17:24Z",
   "image": "organizr",
   "tags": {
     "latest": {
       "app_version": "2026-05-19",
       "arch": "amd64",
-      "generated": "2026-10-10T23:49:05Z",
+      "generated": "2026-10-20T22:16:04Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -196,7 +196,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-runtime",
-            "version": "15.1p4"
+            "version": "15.1p5"
           },
           {
             "licenses": [
@@ -245,7 +245,7 @@
               "PD"
             ],
             "name": "FreeBSD-zoneinfo",
-            "version": "15.1p4"
+            "version": "15.1p5"
           },
           {
             "licenses": [
@@ -266,7 +266,7 @@
               "MPL20"
             ],
             "name": "ca_root_nss",
-            "version": "3.130"
+            "version": "3.131"
           },
           {
             "licenses": [
@@ -403,7 +403,7 @@
               "BSD2CLAUSE"
             ],
             "name": "nginx",
-            "version": "1.30.4,3"
+            "version": "1.30.5_2,3"
           },
           {
             "licenses": [
@@ -424,7 +424,7 @@
               "BSD3CLAUSE"
             ],
             "name": "pcre2",
-            "version": "10.47_1"
+            "version": "10.49"
           },
           {
             "licenses": [
