@@ -1,11 +1,11 @@
 {
-  "generated": "2026-10-22T07:48:44Z",
+  "generated": "2026-10-23T17:01:50Z",
   "image": "organizr",
   "tags": {
     "latest": {
       "app_version": "2026-05-19",
       "arch": "amd64",
-      "generated": "2026-10-22T07:47:56Z",
+      "generated": "2026-10-23T17:01:11Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -181,13 +181,6 @@
             "licenses": [
               "BSD2CLAUSE"
             ],
-            "name": "FreeBSD-rc",
-            "version": "15.1"
-          },
-          {
-            "licenses": [
-              "BSD2CLAUSE"
-            ],
             "name": "FreeBSD-resolvconf",
             "version": "15.1"
           },
@@ -281,13 +274,6 @@
             ],
             "name": "cyrus-sasl",
             "version": "2.1.28_6"
-          },
-          {
-            "licenses": [
-              "ISCL"
-            ],
-            "name": "execline",
-            "version": "2.9.8.1"
           },
           {
             "licenses": [
@@ -396,14 +382,14 @@
               "BSD3CLAUSE"
             ],
             "name": "libzip",
-            "version": "1.11.4"
+            "version": "1.12.1"
           },
           {
             "licenses": [
               "BSD2CLAUSE"
             ],
             "name": "nginx",
-            "version": "1.30.5_2,3"
+            "version": "1.30.6,3"
           },
           {
             "licenses": [
@@ -561,20 +547,6 @@
           },
           {
             "licenses": [
-              "ISCL"
-            ],
-            "name": "s6",
-            "version": "2.14.0.1"
-          },
-          {
-            "licenses": [
-              "ISCL"
-            ],
-            "name": "skalibs",
-            "version": "2.14.5.1"
-          },
-          {
-            "licenses": [
               "PD"
             ],
             "name": "sqlite3",
@@ -681,7 +653,7 @@
       "source": "upstream",
       "summary": {
         "dotnet": 0,
-        "freebsd": 82,
+        "freebsd": 78,
         "go": 0,
         "java": 0,
         "node": 16,
@@ -689,7 +661,7 @@
         "python": 0,
         "ruby": 0,
         "rust": 0,
-        "total": 98
+        "total": 94
       }
     }
   }
