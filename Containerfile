@@ -52,9 +52,7 @@ RUN git clone -b "${BRANCH}" --depth 1 https://github.com/causefx/Organizr /app/
 
 # Copy default configs and scripts
 COPY root/ /
-
-# Make scripts executable and set up php-fpm service
-RUN chmod +x /etc/cont-init.d/* /etc/services.d/*/run 2>/dev/null || true
+RUN chmod +x /daemonless/libexec/* /daemonless/init.d/*
 
 # --- Expose (Injected by Generator) ---
 EXPOSE 80

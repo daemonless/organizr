@@ -1,0 +1,8 @@
+#!/bin/sh
+# php-fpm rcd unit - master runs as root
+# worker processes run as bsd user via www.conf settings
+
+mkdir -p /run/php
+chown bsd:bsd /run/php
+
+exec /usr/local/sbin/php-fpm -F
