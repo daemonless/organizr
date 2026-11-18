@@ -3,4 +3,3 @@ cit:
   mode: screenshot
   port: 80
   wait: 120
-  ready: "Starting s6 supervision"
