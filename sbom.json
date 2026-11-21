@@ -1,11 +1,11 @@
 {
-  "generated": "2026-11-04T17:01:42Z",
+  "generated": "2026-11-21T10:23:17Z",
   "image": "organizr",
   "tags": {
     "latest": {
       "app_version": "2026-05-19",
       "arch": "amd64",
-      "generated": "2026-11-04T17:00:54Z",
+      "generated": "2026-11-21T10:22:25Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -295,7 +295,7 @@
               "GPLv2"
             ],
             "name": "git-lite",
-            "version": "2.56.0"
+            "version": "2.56.1"
           },
           {
             "licenses": [
@@ -536,7 +536,7 @@
               "BSD2CLAUSE"
             ],
             "name": "pkg",
-            "version": "2.8.4"
+            "version": "2.9.2"
           },
           {
             "licenses": [
